@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 1: Automata and Regular Expressions - Questions</title>
+    <link rel="stylesheet" href="./sources/questions.css">
+    <link rel="stylesheet" href="./sources/common.css">
+</head>
+<body>
+    <header>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <h1 id="unit-name">Unit 1: Automata and Regular Expressions</h1>
+        <div class="search-icon" onclick="toggleSearch()">&#128269;</div>
+    </header>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+            <h2 class="content">Contents<span class="home-icon">&#8962;</span></h2>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 1: Automata and Regular Expressions')">
+                <h3>Unit 1: Automata and Regular Expressions</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 2: Regular Expressions and Languages')">
+                <h3>Unit 2: Regular Expressions and Languages</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 3: Context-Free Grammar and Pushdown Automata')">
+                <h3>Unit 3: Context-Free Grammar and Pushdown Automata</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 4: Normal Forms and Turing Machines')">
+                <h3>Unit 4: Normal Forms and Turing Machines</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 5: Undecidability')">
+                <h3>Unit 5: Undecidability</h3>
+            </div>
+        </div>
+    </aside>
+    <div class="search-bar" id="search-bar">
+        <input type="text" id="search-input" placeholder="Search questions...">
+        <button onclick="searchQuestions()">Search</button>
+    </div>
+    <main>
+        <section class="questions-container">
+            <div class="question" onclick="toggleAnswer(this)">
+                <h2>Q.1 List any four ways of theorem proving.</h2>
+                <p class="answer"> 1) Proof by contradiction. <br>
+
+                  2) Proof by contrapositive. <br>
+                  
+                  3) Proof by counter example.<br>
+                  
+                  4) Proof by principle of mathematical induction.</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+                <h2>Q.2 Define automata.</h2>
+                <p class="answer">Automata are the kind of machines which take some string as input. This input goes through a finite number of states and may enter in the final state.</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+                <h2>Q.3 List the applications of automata theory.</h2>
+                <p class="answer">1. Automata theory is the base for the formal languages and these formal languages are useful of the programming languages. <br>
+
+                  2. Automata theory plays an important role in compiler design.<br>
+                  
+                  
+                  3. To prove the correctness of the program automata theory is used.<br>
+                  
+                  4. In switching theory and design and analysis of digital circuits automata theory is applied.<br>
+                  
+                  5. Automata theory deals with the design finite state machines.</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+                <h2>Q.4 What is structural induction?</h2>
+                <p class="answer">Structural induction is a kind of proof by induction. It is used to prove that there exists a relationship between some function of integers and a given formula. For this proof technique - <br>
+
+                  1. Prove the pattern is true for smallest number we care about.<br>
+
+                  
+                  2. Assume it holds for an arbitrary number n.<br>
+
+                  
+                  3. Prove that if it is true for n, then it must be true for n + 1, as well.</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+                <h2>Q.5 How does recursive function solves Fibonacci function ?</h2>
+                <p class="answer">Following recursive formula is used to solve Fibonacci function.
+
+                  Fib(n) = Fib(n - 1) + Fib(n - 2)
+                  
+                  Fib(0) = 0 and Fib(1) = 1 <!--img--></p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+                <h2>Q.6 What is induction principle? Give an example. </h2>
+                <p class="answer">The proof by mathematical induction can be carried out using following steps – <br>
+
+
+                  1. Basis: In this step we assume the lowest possible value. This is an initial step in the proof of mathematical induction.<br>
+                  
+                  For example, we can prove that the result is true for n = 0 or n = 1.<br>
+                  
+                  2. Induction Hypothesis: In this step we assign value of n to some other value k. That mean we will check whether the result is true for n = k or not.<br>
+                  
+                  3. Inductive Step: In this step, if n = k is true then we check whether the result is true for n k+ 1 or not. If we get the same result at n = k + 1 then we can state that given proof is true by principle of mathematical induction..</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+                <h2>Q.7 What is the proof by contradiction?</h2>
+                <p class="answer">In proof by contradiction technique, for the statement of the form if A then B we start with statement A is not true and thus by assuming this false A we try to get the conclusion of statement B. When it becomes impossible to reach to statement B, then we contradict ourselves and accept that A is true.</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+                <h2>Q.8 Define NFA with ε transition. Is the NFA's with ε transitions more powerful than the NFA's without ε transitions?</h2>
+                <p class="answer">The NFA can be formally defined as a collection of 5 tuples. <br>
+
+                  Q is a finite set of states.<br>
+                  
+                  Σ is a finite set of inputs.<br>
+                  
+                  δ is called next state or transition function.<br>
+                  
+                  q0 is initial state.<br>
+                  
+                  F is a final state where F subset of Q.<br>
+                  
+                  No. The NFA with e transitions are equivalent to the NFA without ε transitions.</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+                <h2>Q.9 What is a finite automation? Give two examples. </h2>
+                <p class="answer">A finite automation is a collection of 5-tuples (Q, Σ, δ, q0, F) where <br>
+
+                  • Q is a finite set of states, which is a non-empty one.<br>
+                  
+                  • Σ is input alphabet, indicates input set.<br>
+                  
+                  • q0 in Q is the initial state.<br>
+                  
+                  • F is a set of final states.<br>
+                  
+                  • δ is a transition function.<!--img--></p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+                <h2>Q.10 Define a) Finite Automaton (FA) b) Transition diagram</h2>
+                <p class="answer"> A finite automation is a collection of 5-tuples (Q, Σ, δ, q0, F) where <br>
+
+                  • Q is a finite set of states, which is a non-empty one.<br>
+                  
+                  • Σ is input alphabet, indicates input set.<br>
+                  
+                  • q0 in Q is the initial state.<br>
+                  
+                  • F is a set of final states.<br>
+                  
+                  • δ is a transition function.<br>
+                  
+                  b) Transition diagram: A transition diagram can be defined as collection of -<br>
+                  
+                  1) Finite set of states K<br>
+                  
+                  2) Finite set of symbols<br>
+                  
+                  3) A non empty set S of K which is called start state.<br>
+                  
+                  4) A set F subset of  K of final states.<br>
+                  
+                  5) A transition function K × A → K with K state and A as input from Σ*.</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+              <h2>Q.11 What is meant by DFA ?</h2>
+              <p class="answer">The finite automata is called Deterministic Finite Automata if there is only one path for a specific input from current state to next state. </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.12 Define the term epsilon transition</h2>
+            <p class="answer">In the non deterministic finite state machine, the transition that does not require input symbols for state transition and is capable of transiting to zero or more states with & is called epsilon transition.</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.13 What is a non deterministic finite automation?</h2>
+            <p class="answer"> • The concept of Non-deterministic Finite Automata is exactly reverse of Deterministic Finite Automata. The Finite Automata is called NFA when there exists many paths for a specific input from current state to next state. </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.14 Define deductive proof.</h2>
+            <p class="answer">The deductive proof consists of sequence of statements given with logical reasoning in order to prove the first or initial statements. The initial statement is called hypothesis.</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.15 Define Deterministic Finite Automata (DFA). </h2>
+            <p class="answer">The Deterministic Finite Automata is a collection of following things: <br>
+
+              1) Finite set of states - Q<br>
+              
+              2) Finite set of input symbols - Σ<br>
+              
+              3) The start state q0 such that q0 ϵ Q.<br>
+              
+              4) The set of final states F such that F ϵ Q<br>
+              
+              5) The mapping function δ.<br>
+              
+              The DFA is denoted by,<br>
+              
+              M = (Q, Σ, δ, q0, F).</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.16 Define ε - closure.</h2>
+            <p class="answer"> The ε - closure (p) is a set of all states which are reachable from state p on ε - transitions such that: <br>
+
+              i) ε - closure (p) = p where p ϵ Q.<br>
+              
+              ii) If there exists ε - closure (p) = {q} and δ (q, ε) = r then<br>
+              
+              ε - closure (p) = {q, r}</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.17 Enumerate the difference between DFA and NFA </h2>
+            <p class="answer"> <img src="./sources/diff nfa and dfa.png" alt=""></p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.18 Differentiate between proof by contradiction and proof by contrapositive </h2>
+            <p class="answer"><img src="./sources/diff contrapostive and contradiction.png" alt=""></p>
+          </div>
+        <!--  <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.1 </h2>
+            <p class="answer"> 1) Pro</p>
+          </div>-->
+          
+        </section>
+    </main>
+    <script src="./sources/questions.js">
+    </script>
+</body>
+</html>

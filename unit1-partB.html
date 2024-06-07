@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 1: Automata and Regular Expressions - Questions</title>
+    <link rel="stylesheet" href="./sources/questions.css">
+    <link rel="stylesheet" href="./sources/common.css">
+</head>
+<body>
+    <header>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <h1 id="unit-name">Unit 1: Automata and Regular Expressions</h1>
+        <div class="search-icon" onclick="toggleSearch()">&#128269;</div>
+    </header>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <h2 class="content">Contents<span class="home-icon">&#8962;</span></h2>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 1: Automata and Regular Expressions')">
+                <h3>Unit 1: Automata and Regular Expressions</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 2: Regular Expressions and Languages')">
+                <h3>Unit 2: Regular Expressions and Languages</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 3: Context-Free Grammar and Pushdown Automata')">
+                <h3>Unit 3: Context-Free Grammar and Pushdown Automata</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 4: Normal Forms and Turing Machines')">
+                <h3>Unit 4: Normal Forms and Turing Machines</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 5: Undecidability')">
+                <h3>Unit 5: Undecidability</h3>
+            </div>
+        </div>
+    </aside>
+    <div class="search-bar" id="search-bar">
+        <input type="text" id="search-input" placeholder="Search questions...">
+        <button onclick="searchQuestions()">Search</button>
+    </div>
+    <main>
+        <section class="questions-container">
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.1  Prove that √2 is not rational.</h2>
+            <p class="answer"><img src="sources/rational number.png" alt=""></p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.2  Prove that if n is a positive integer such that n mod 4 is 2 or 3 then n is not a perfect square. </h2>
+            <p class="answer"> The method of contra positive is used. According to method of contra position for proving "If A then B" we prove if not A then not B.<br>
+
+              Here we prove - IF n is a perfect square then n mod (4) must be 0 or 1.<br>
+              
+              Consider that there exists a positive integer n such that n mod 4 is 0 or 1. Then n is a perfect square i.e. n = m2, where m is another positive integer. Following are some cases -<br>
+              
+              1) If m mod 4 = 0 then m = 4i.<br>
+              
+              For instance - IF i = 1 then m is perfect square<br>
+              
+              Here i = 1, 4, 9, ...<br>
+              
+              2) If m mod 4 = 1, then m = 4i + 1.<br>
+              
+              Here i = 2, 6, 12, 20, ...<br>
+              
+              3) If m mod 4 = 2, then m = 4i + 2.<br>
+              
+              Here we fail to identify value of i that will make m as perfect square.<br>
+              
+              4) If m mod 4 = 3 then m = 4i + 3.<br>
+              
+              Again there does not exist any value of i which lead to m as perfect square. This proves that n is a positive integer such that n mod 4 is 2 to 3 and n is not a perfect square.</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.3  Prove by induction on n that Σ<sup>n</sup><sub>i=0</sub> i = n(n+1)/2 </h2>
+            <p class="answer"> Initially,<br>
+
+              1) Basis of induction -<br>
+              
+              Assume, n = 1. Then,<br>
+              
+              L.H.S= n, = 1<br>
+              
+              R.H.S = n(n+1)/2 = 1(1+1)/2 = 2/2 = 1<br>
+              
+              Now,<br>
+              
+              2) Induction hypothesis -<br>
+              
+              Now we will assume n = k and will obtain the result for it. The equation then becomes,<br>
+              
+              1+2+3+ ... + k = (k(k+1)/2<br>
+              
+              3) Inductive step -<br>
+              
+              Now we assume that equation is true for n = k. And we will then check if it is also true for n = k + 1 or not.<br>
+              
+              Consider the equation assuming n = k + 1<br>
+              
+              L.H.S. = 1+ 2+ 3... + k + k + 1             equation (1)<br>
+              
+              k(k+1)/2 +k+1<br>
+              
+              = k(k + 1) + 2(k + 1)/2<br>
+              
+              = (k+ 1) (k + 2)/2             <br>                 (taking common factor)
+              
+              i.e. = (k + 1) (k + 1 + 1)/2<br>
+              
+              = R.H.S.</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.4 Convert the given NFA with ɛ to NFA without ε.  <img src="./sources/b1.jpg" alt=""></h2>
+            <p class="answer"> Step 1: We will first obtain ε - closure of each state i.e. we will find out ε - reachable states from current state.<br>
+
+              Hence<br>
+              
+              ε - closure (q0) = {q0, q1, q2}<br>
+              
+              ε - closure (q1) = {q1, q2}<br>
+              
+              ε - closure (q2) = {q2}<br>
+              
+              As ε - closure (q0) means with null input (no input symbol) we can reach to q0, q1 or q2. In a similar manner for q1 and q2 ε - closures are obtained.
+              <br>
+              Step 2: Now we will obtain δ' transitions for each state on each input symbol.<br>
+              
+              δ' (q0, 0) = ε - closure (δ (δ' (q0, ε), 0))<br>
+              
+              = ε - closure (δ(ε - closure(q0), 0))<br>
+              
+              = ε - closure (δ(q0, q1, q2), 0).<br>
+              
+              = ε - closure (δ(q0, 0) U δ(q1, 0) U δ (q2,0))
+              <br>
+              = ε - closure (q0 U ϕ U ϕ)
+              <br>
+              = ε - closure (q0) = {q0, q1, q2}
+              <br>
+              δ' (q0, 1) = ε - closure (δ (δ`(q0,ε), 1))
+              <br>
+              = ε - closure (δ (q0, q1, q2), 1)
+              <br>
+              = ε - closure (δ (q0, 1) U δ (q1, 1) U δ (q2,1))<br>
+              
+              = ε closure (ϕ U q1 U ϕ)
+              <br>
+              = ε - closure (q1)
+              <br>
+              δ' (q0, 1) = {q1, q2}
+              <br>
+              δ' (q1,0) = ε - closure (δ (δ`(q1,ε), 0))
+              <br>
+              = ε - closure (δ (ε - closure (q1), 0))
+              <br>
+              = ε closure (δ (q1,q2), 0)
+              <br>
+              = ε closure (δ (q1, 0) U δ (q2, 0))
+              <br>
+              = ε closure (ϕUϕ)
+              <br>
+              = ε - closure (ϕ)
+              <br>
+              = ϕ
+              <br>
+              δ' (q1, 1) = ε - closure (δ (δ` (q1, ε), 1))
+              <br>
+              = ε - closure (δ (ε - closure (q1), 1))
+              <br>
+              = ε - closure (δ (q1, q2), 1)
+              <br>
+              = ε - closure (δ (q1, 1) U δ (q2, 1))
+              <br>
+              = ε - closure (q1 U ϕ)
+              <br>
+              = ε - closure (q1)
+              <br>
+              = {q1, q2}
+              <br>
+              δ′(q2, 0) = ε- closure (δ (δ` (q2, ε), 0))
+              <br>
+              = ε - closure (δ (ε - closure (q2), 0))
+              <br>
+              = ε - closure (δ (q2, 0))
+              <br>
+              = ε - closure (ϕ)
+              <br>
+              = ϕ
+              <br>
+              δ ' (q2, 1) = ε - closure (δ (δ` (q2, ε), 1))
+              <br>
+              = ε closure (δ (ε - closure (q2), 1))
+              <br>
+              = ε - closure (δ (q2,1))
+              <br>
+              = ε - closure (ϕ)
+              <br>
+              δ' (q2, 1) = ϕ
+              <br>
+              δ' (q0, 2) = ε - closure (δ (δ` (q2, ε), 2))
+              <br>
+              = ε - closure (δ (ε -closure (q0), 2))
+              <br>
+              = ε - closure (δ (q0, q1, q2), 2).
+              <br>
+              = ε - closure (δ (q0, 2) U δ (q1, 2) U δ (q2, 2))<br>
+              
+              = ε - closure (q2)
+              <br>
+              = ε - closure (q2)
+              <br>
+              = {q2}
+              <br>
+              δ' (q1,2) = ε - closure (δ (δ` (q1, ε), 2))
+              <br>
+              = ε - closure (δ (ε - closure (q1), 2))
+              <br>
+              = ε - closure (δ (q1, q2), 2)
+              <br>
+              = &- closure (δ (q1, 2) U δ (q2, 2))
+              <br>
+              = ε closure (ϕ U q2)
+              <br>
+              = {q2}
+              <br>
+              δ′ (q2, 2) = ε - closure (δ (δ` (q2, ε), 2))
+              <br>
+              = ε - closure (δ (ε - closure (q2), 2))
+              <br>
+              = ε - closure (δ (q2, 2))
+              <br>
+              = ε - closure (q2)
+              <br>
+              = {q2}
+              <br>
+              Now we will summarize all the computed δ' transitions -
+              <br>
+              δ'(q0, 0) = {q0, q1, q2},  &ensp; δ'(q0, 1) = {q1, q2),  &ensp;  δ'(q0, q2) = {q2}<br>
+              
+              
+              δ'(q1, 0) = ϕ    &ensp;               δ'(q1, 1) = {q1, q2},  &ensp;  δ'(q1, 2) = {q2}
+              <br>
+              
+              δ'(q2, 0) = ϕ   &ensp;                δ'(q2, 1) = ϕ      &ensp;         δ'(q2, 2) = {q2}  
+              Step 3:<br>
+
+              From this we can write the transition table as - <br>
+            <img src="./sources/b2.jpg" alt="">
+            Step 4:<br>
+
+            The NFA will be,<br>
+            
+            Here q0, q1 and q2 is a final state because ε closure (q0), ε - closure (q1) and ε - closure (q2) contains final state q2.<br>
+            <img src="./sources/b3.jpg" alt=""></p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.5 Construct an NFA without ε transitions for the NFA <img src="./sources/b4.jpg" alt=""> </h2>
+            <p class="answer"> We will first obtain ε - closures of q0 and q1 as follows -<br>
+
+              ε - Closure (q0) = {q0, q1}<br>
+              
+              ε - Closure (q1) = {q1}<br>
+              
+              Now δ' transitions on each input symbol is obtained as -<br>
+              
+              δ'(q0, 0) = ε - Closure (δ (δ` (q0, ε), 0))
+              <br>
+              = ε - Closure (δ (ε - Closure (q0), 0))
+              <br>
+              = ε - Closure (δ ((q0, q1), 0))
+              <br>
+              = ε - Closure (q0)
+              <br>
+              δ' (q0, 0) = {q0, q1}
+              <br>
+              δ' (q0, 1) = ε - Closure (δ (δ` (q0, ε), 1))
+              <br>
+              = ε - Closure (δ (ε - Closure (q0), 1))
+              <br>
+              = ε - Closure (8 ((q0, q1), 1))
+              <br>
+              = ε - Closure (q1)
+              <br>
+              δ' (q0, 1) = {q1}
+              <br>
+              δ' (q1, 0) = ε - Closure (δ (δ` (q1, ε), 0))
+              <br>
+              = ε - Closure (δ (ε - Closure (q1), 0))
+              <br>
+              = ε - Closure (δ (q1, 0))
+              <br>
+              = ε - Closure (ϕ)
+              <br>
+              δ' (q1, 0) = ϕ
+              <br>
+              δ' (q1, 1) = ε - Closure (δ (δ` (q1, ε), 1))
+              <br>
+              = ε - Closure (δ (ε - Closure (q1), 1))
+              <br>
+              = ε - Closure (δ (q1, 1))
+              <br>
+              = ε - Closure (q1)
+              <br>
+              δ' (q1, 1) = {q1}
+              <br>
+              The transation table for NFA without & will be,<img src="./sources/b5.jpg" alt=""><br>
+              The transition diagram will be -<br><img src="./sources/b6.jpg" alt=""></p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.7 Theorem: Let L be a set accepted by non-deterministic finite automation. Then there exists a deterministic finite automation that accepts L.
+
+              OR
+              
+              Prove that "A language L is accepted by some DFA if and only if L is accepted by some NFA".</h2>
+            <p class="answer"><img src="./sources/theorem1.png" alt=""><br><img src="./sources/theorem12.png" alt=""></p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.8 Prove that there exists a DFA for every ε - NFA.</h2>
+            <p class="answer"><img src="./sources/theorem2.png" alt=""></p>
+          </div>
+          
+
+           <!--  <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.1 </h2>
+            <p class="answer"> 1) Pro</p>
+          </div>-->
+          
+        </section>
+      </main>
+      <script src="./sources/questions.js">
+      </script>
+  </body>
+  </html>
+  

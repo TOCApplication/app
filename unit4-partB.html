@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 4: Normal Forms and Turing Machines - Questions</title>
+    <link rel="stylesheet" href="./sources/questions.css">
+    <link rel="stylesheet" href="./sources/common.css">
+
+</head>
+<body>
+    <header>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <h1 id="unit-name">Unit 4: Normal Forms and Turing Machines</h1>
+        <div class="search-icon" onclick="toggleSearch()">&#128269;</div>
+    </header>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+            <h2 class="content">Contents<span class="home-icon">&#8962;</span></h2>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 1: Automata and Regular Expressions')">
+                <h3>Unit 1: Automata and Regular Expressions</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 2: Regular Expressions and Languages')">
+                <h3>Unit 2: Regular Expressions and Languages</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 3: Context-Free Grammar and Pushdown Automata')">
+                <h3>Unit 3: Context-Free Grammar and Pushdown Automata</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 4: Normal Forms and Turing Machines')">
+                <h3>Unit 4: Normal Forms and Turing Machines</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 5: Undecidability')">
+                <h3>Unit 5: Undecidability</h3>
+            </div>
+        </div>
+    </aside>
+    <div class="search-bar" id="search-bar">
+        <input type="text" id="search-input" placeholder="Search questions...">
+        <button onclick="searchQuestions()">Search</button>
+    </div>
+    <main>
+        <section class="questions-container">   
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.1 Closure properties of Context-Free Languages</h2>
+            <p class="answer"><img src="./sources/img(1).jpg" alt=""><img src="./sources/img(2).jpg" alt=""><img src="./sources/img(3).jpg" alt=""><img src="./sources/img(4).jpg" alt=""></p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.2 Pumping lemma for Context-Free Languages</h2>
+            <p class="answer"><img src="./sources/img(5).jpg" alt=""><img src="./sources/img(6).jpg" alt=""><img src="./sources/img(7).jpg" alt=""></p>
+          
+          <!--  <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.1 </h2>
+            <p class="answer"> 1) Pro</p>
+          </div>-->
+          
+        </section>
+      </main>
+      <script src="./sources/questions.js">
+          
+      </script>
+  </body>
+  </html>

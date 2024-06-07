@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212; /* Dark background color */
+  color: #ffffff; /* White text color */
+  padding: 20px;
+  font-size: 16px; /* Increased font size for better readability */
+  -webkit-tap-highlight-color: transparent;
+}
+
+header {
+  text-align: center;
+  background-color: #1f1f1f; /* Darker gray for header */
+  color: #ffffff;
+  padding: 20px 0;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em; /* Increased font size */
+}
+
+header p {
+  margin: 0;
+  font-size: 1.2em; /* Increased font size */
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.content-container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.unit {
+  background: #333333; /* Dark gray background for units */
+  border-radius: 10px;
+  padding: 20px; /* Increased padding for better touch targets */
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s; /* Add transition for background color and scale */
+  border-radius: 40px;
+}
+
+.unit:hover {
+  background-color: #444444; /* Slightly lighter gray on hover */
+  transform: scale(1.02); /* Slightly increase size on hover */
+}
+
+.unit h2 {
+  margin: 0;
+  font-size: 1.35em; /* Increased font size */
+  color: #ffffff;
+}
+
+.back{
+  width: auto;
+   background-color: #007BFF;padding: 10px 20px;
+   border-radius: 10px;
+}
+.back-div{
+  display: flex;
+  align-items: center;justify-content: center;
+}
+
+p{
+  padding-top: 10px;
+}

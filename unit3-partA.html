@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 3: Context-Free Grammar and Pushdown Automata - Questions</title>
+    <link rel="stylesheet" href="./sources/questions.css">
+    <link rel="stylesheet" href="./sources/common.css">
+
+</head>
+<body>
+    <header>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <h1 id="unit-name">Unit 3: Context-Free Grammar and Pushdown Automata</h1>
+        <div class="search-icon" onclick="toggleSearch()">&#128269;</div>
+    </header>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <h2 class="content">Contents<span class="home-icon">&#8962;</span></h2>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 1: Automata and Regular Expressions')">
+                <h3>Unit 1: Automata and Regular Expressions</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 2: Regular Expressions and Languages')">
+                <h3>Unit 2: Regular Expressions and Languages</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 3: Context-Free Grammar and Pushdown Automata')">
+                <h3>Unit 3: Context-Free Grammar and Pushdown Automata</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 4: Normal Forms and Turing Machines')">
+                <h3>Unit 4: Normal Forms and Turing Machines</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 5: Undecidability')">
+                <h3>Unit 5: Undecidability</h3>
+            </div>
+        </div>
+    </aside>
+    <div class="search-bar" id="search-bar">
+        <input type="text" id="search-input" placeholder="Search questions...">
+        <button onclick="searchQuestions()">Search</button>
+    </div>
+    <main>
+        <section class="questions-container">
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.1 Define CFG</h2>
+            <p class="answer"> &ensp;A context-free grammar (CFG) is a formal grammar in which every production rule is of the form V → w where V is a single nonterminal symbol, and w is a string of terminals and/or nonterminals (w can be empty).
+                <br>A formal grammar is considered "context free" when its production rules can be applied regardless of the context of a nonterminal. No matter which symbols surround it, the single nonterminal on the left hand side can always be replaced by the right hand side</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.2 Construct context free grammar {0 m 1 n |1<=m<=n}</h2>
+            <p class="answer">S->0AS1B|ε
+                                           <br> &ensp;A->ε
+                                           <br>&ensp;B->1B|ε</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.3 Define Ambiguous Grammar? Give an Example.</h2>
+            
+              <p class="answer">&ensp;A Grammar Generates more than one parse tree for one of its string then the Grammar is said to be ambiguous grammar.
+<br> &emsp;Example: E->E+E|E*E|id</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.4 Let G be the grammar with<br>
+              &ensp;S->aB|bA<br>
+              &ensp;A->a|aS|bAA
+              &ensp;B->b|bS|aBB.For the string aaabbabbba find the left most derivation.</h2>
+            <p class="answer">S-> aB<br> &ensp;
+                aaBB<br> &ensp;
+                aaaBBB<br> &ensp;
+                aaabBB<br> &ensp;
+                aaabbSB<br> &ensp;
+                aaabbaBB<br> &ensp;
+                aaabbabB<br> &ensp;
+                aaabbabbS<br> &ensp;
+                aaabbabbbA<br> &ensp;
+                aaabbabbba</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.5 Let G = {{s,c},{a,b},P,S} where P consists of S->aCa,C->aCa|b.Find L(G).</h2>
+            <p class="answer">S->aCa->aaCaa->aaaCaaa->…..->aicai->anban(C->b)<br> &ensp;
+              L(G) = {anban |n>=1}</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.6 Define a derivation tree for a CFG.</h2>
+            <p class="answer"> &ensp;A derivation tree for a CFG G = (V,T,P,S)is a tree satisfying the following:<br>&emsp;
+               a)Every vertex has a label which is a symbol of VUTUε.<br>&emsp;
+               b)The label of the root is S.<br>&emsp;
+               c)the internal vertices must be in V.<br>&emsp;
+               d) If n has a label ‟ a‟ and vertices n1,n2,n3,n4,…..nk are sons of the vertex n ,in order from the left with label X1,X2,X3,X4,…..Xk respectively. Then A-> X1,X2,X3,X4,…..Xk must be a production in P.<br>&emsp;
+               e) If vertex n has label ε then n is a leaf and is only son of its father.<br>&emsp;</p>
+          </div> 
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.7 Let G = (N,T,P,S), P ={S->A1B|a, A->0A| ε , B->0B|1B| ε }.give a leftmost and rightmost derivation for the string 00101.</h2>
+            <p class="answer">&ensp; LMD: S->A1B -> 0A1B -> 00A1B -> 001B ->0010B -> 00101B -> 00101<br>&ensp;
+               RMD: S-> A1B -> A10B -> A101B -> A101-> 0A101 -> 00A101 -> 00101</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.8 What is unambiguity?&emsp;&emsp;</h2>
+            <p class="answer">&ensp;A Grammar Could not be able to generate more than one parse tree for any of its string then the grammar is said to be unambiguous one.</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.9 Mention the application of CFG.&emsp;</h2>
+            <p class="answer">&ensp;1)Writing Syntax rule to the programming Language.<br> &ensp;
+                2)Generating Recursive Structure can be easy.</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.10 State the definition of Pushdown automata.&emsp;&emsp;</h2>
+            <p class="answer">&ensp;A pushdown automaton consists of 7 tuples
+               &ensp;P = (Q, ∑, Г, δ, q0, Z0, F)<br> &ensp;
+               Where Q – A finite non empty set of states<br> &ensp;
+               ∑ - A finite set of input symbols<br> &ensp;
+               Г – A finite non empty set of stack symbols<br> &ensp;
+               δ - The transition function is given by<br> &emsp;
+               δ:Q X (∑ U {ε}) X Г  Q X Г*<br> &ensp;
+               q0 – q0 in Q is the start state<br> &ensp;
+               Z0 - Initial start symbol of the stack<br> &ensp;
+               F - F in Q, set of accepting states or final states.</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.11 Does a Push down Automata have memory? Justify.&emsp;&emsp; </h2>
+            <p class="answer"> &ensp;Yes. It has the memory in the form of stack model.</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.12 What is a CFG ? &emsp;&emsp;</h2>
+            <p class="answer">&ensp;A context-free grammar (CFG) is a formal grammar in which every production rule is of the form V → w where V is a single nonterminal symbol, and w is a string of terminals and/or nonterminals (w can be empty). <br>&ensp;A formal grammar is considered "context free" when its production rules can be applied regardless of the context of a nonterminal.<br>&ensp; No matter which symbols surround it, the single nonterminal on the left hand side can always be replaced by the right hand side.</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.13 What are the different ways of language acceptances by a PDA and define them?&emsp;&emsp;</h2>
+            <p class="answer">&ensp;• Language accepted by a Empty store.
+               <br>&ensp;• Language accepted by a Final state. </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.14 Compare NFA and PDA &emsp;&emsp;</h2>
+            <p class="answer"> &ensp;1. Stack which is used to store the necessary tape symbols and use the state to remember the conditions.<br>&ensp; 2. Two ways of language acceptances, one reaching its final state and another by emptying its stack.</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.15 Convert the given CFG to PDA</h2>
+            <p class="answer">S->aS|bS|a|b <br> &ensp;
+                δ (q,ɛ,S)={(q,aS),(q,bS),(q,a),(q,b)}<br> &ensp;
+               δ (q,a,a)=(q, ɛ)<br> &ensp;
+               δ (q,b,b)=(q, ɛ) </p>
+          </div>
+        
+
+<!--  <div class="question" onclick="toggleAnswer(this)">
+            <h2></h2>
+            <p class="answer"></p>
+          </div>-->
+          
+        </section>
+      </main>
+      <script src="./sources/questions.js">
+          
+      </script>
+  </body>
+  </html>
+  

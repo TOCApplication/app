@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Quiz Competition</title>
+    <link rel="stylesheet" href="./sources/quiz.css">
+    <link rel="stylesheet" href="./sources/common.css">
+</head>
+<body>
+    <div id="intro-container">
+        <h1>Quiz</h1>
+        <form id="participant-form">
+           
+            <button type="submit">Start</button>
+        </form>
+    </div>
+    <div id="rules-container" class="hidden">
+        <h1>Unit - 2 Quiz</h1>
+        <p id="rules-text"></p>
+        <button onclick="startRound()">Start Round</button>
+    </div>
+    <div id="quiz-container" class="hidden">
+        <h1>Quiz</h1>
+        <div id="question-container"></div>
+        
+    </div>
+    <div id="score-container" class="hidden">
+        <h2>Final Score</h2>
+        <p id="final-score"></p>
+        <button onclick="navigateToUnit('selection.html', 'Unit 2: Regular Expressions and Languages')">Back</button>
+    </div>
+    <script src="./sources/quiz2.js"></script>
+ 
+</body>
+</html>

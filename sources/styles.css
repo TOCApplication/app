@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212; /* Dark background color */
+  color: #ffffff; /* White text color */
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+header {
+  width: 100%;
+  background-color: #1f1f1f; /* Darker gray for header */
+  color: #ffffff;
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 1000; /* Ensure header is on top */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 25px;/* Add space above and below the heading */
+  text-align: center;
+}
+
+.updates-container {
+  width: 100%;
+  overflow: hidden; /* Hide overflow to create scrolling effect */
+  white-space: nowrap;
+   /* Dark gray background for updates */
+  padding: 10px 0;
+  box-sizing: border-box;
+  margin-bottom: 10px; /* Space between updates and heading */
+}
+
+.updates {
+  display: inline-block;
+  animation: scroll 15s linear infinite; /* Faster scrolling animation */
+}
+
+.updates span {
+  margin-right: 50px; /* Space between updates */
+}
+
+@keyframes scroll {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+main {
+  margin-top: 160px; /* Adjust for fixed header height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #333333; /* Dark gray background for buttons */
+  color: #ffffff; /* White text color */
+  border: none;
+  border-radius: 40px;
+  padding: 20px 25px;
+  margin: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  width: 100%; /* Make buttons full width of container */
+  font-size: 1.2em;
+  font-weight:520;
+}
+
+button:hover {
+  background-color: #444444; /* Slightly lighter gray on hover */
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+/* Style the quote container */
+.quote-container {
+  text-align: center;
+  margin-top: 20px;;
+  max-width: 400px;
+  font-family: Arial, sans-serif;
+  padding: 10px;
+}
+
+/* Style the quote text */
+#quote-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #d4af37;
+}
+
+/* Style the quote author */
+#quote-author {
+  font-size: 14px;
+  color: #fff;
+}
+
+/* Style the button */
+#new-quote-btn {
+  background-color: #0074D9;
+  color: #FFF;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 20px;
+  width: auto;
+}
+

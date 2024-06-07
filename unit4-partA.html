@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 4: Normal Forms and Turing Machines - Questions</title>
+    <link rel="stylesheet" href="./sources/questions.css">
+    <link rel="stylesheet" href="./sources/common.css">
+
+</head>
+<body>
+    <header>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <h1 id="unit-name">Unit 4: Normal Forms and Turing Machines</h1>
+        <div class="search-icon" onclick="toggleSearch()">&#128269;</div>
+    </header>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <h2 class="content">Contents<span class="home-icon">&#8962;</span></h2>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 1: Automata and Regular Expressions')">
+                <h3>Unit 1: Automata and Regular Expressions</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 2: Regular Expressions and Languages')">
+                <h3>Unit 2: Regular Expressions and Languages</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 3: Context-Free Grammar and Pushdown Automata')">
+                <h3>Unit 3: Context-Free Grammar and Pushdown Automata</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 4: Normal Forms and Turing Machines')">
+                <h3>Unit 4: Normal Forms and Turing Machines</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 5: Undecidability')">
+                <h3>Unit 5: Undecidability</h3>
+            </div>
+        </div>
+    </aside>
+    <div class="search-bar" id="search-bar">
+        <input type="text" id="search-input" placeholder="Search questions...">
+        <button onclick="searchQuestions()">Search</button>
+    </div>
+    <main>
+        <section class="questions-container">
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.1 Define CNF form.  </h2>
+            <p class="answer">Every Production is in the form N.T->N.T N.T or N.T->T where N.T stands for Non Terminal and T stands for Terminal</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.2 Eliminate the ε production from the CFG given below <br>
+              A-> 0 B 1 | 1 B 1 <br>
+               B-> 0 B | 1 B | ε  
+</h2>
+            <p class="answer">Eliminate the ε production from the CFG given below <br>
+              A-> 0 B 1 | 1 B 1 <br>
+               B-> 0 B | 1 B | ε  
+</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.3 Define GNF Form</h2>
+            <p class="answer">Every Production is in the form of N.T->N.T α or N.T->T where 
+              α stands for any number of Terminal Symbols
+              </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.4 Consider the following grammar G with productions 	<br>
+              S-> ABC | BaB   <br>    
+              A->aA|BaC|aaa   <br> 
+              B->bBb|a     <br>   
+              C->CA|AC<br>
+              Give a CFG with no useless variables that generates the same language.                           
+              </h2>
+            <p class="answer">Symbol C is non-generative, after removing productions with C we have the below grammar,<br>
+              S-> BaB        <br> 
+              A-> aA|aaa    <br>
+              B-> bBb|a     
+            </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.5 What are the three ways to simplify a context free grammar?</h2>
+            <p class="answer">By removing the useless symbols from the set of productions. <br>
+              By eliminating the empty productions. <br>
+              By eliminating the unit productions.
+              </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.6 What do you mean by null production and unit production? Give an example.                           </h2>
+            <p class="answer">In a grammar any of the Production body has ε then that  particular production is called Null Production. In a grammar any of the  production body has Single Non Terminal then that particular production is called Unit Production             </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.7 State the two  normal forms and give an example.</h2>
+            <p class="answer">1.	Chomsky normal form 	A->BC |a <br>
+              2.	Greibach normal form		X->bYXZ|a</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.8 Define Instantaneous description of turing machine </h2>
+            <p class="answer">        ID of turing machine is represented as <br>
+              X1 X2......Xi-1 q Xi Xi+1.....Xn 
+              i) where q is the state of turing machine. <br>
+              ii) The tape head is scanning the ith symbol from left <br>
+              iii) X1 X2....Xn is the portion of the tape between the leftmost and the rightmost non blank 
+              </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.9 What are the applications of Turing Machine?	</h2>
+            <p class="answer">It is a theoretical model for real world computer. <br>
+              It is used to recognize regular Language
+      </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.10 What is a multitape turing machine?</h2>
+            <p class="answer">A Multitape Turing machine has a finite control with some finite number of tapes. Each tape is divided into cells and each cell can hold any symbol of the finite tape alphabet. The set of tape symbol includes a blank, and has a subset called the input symbols, of which the blank is not a member. </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.1 Design a TM that accepts the language of odd integers written in binary.</h2>
+            <p class="answer">To accept odd valued binary strings, we only have to look at the last bit. The TM moves right until it reads a blank, moves left one space and acepts if and only if there is a 1 on the tape</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.11 What is a multiple track Turing machine? </h2>
+            <p class="answer">    A TM in which the input tape is divided into multiple tracks where each track is having different inputs is called multiple track TM. </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.12 Define Halting Problem </h2>
+            <p class="answer">The halting problem is the problem of determining, from a description of an arbitrary computer program and an input, whether the program will finish running or continue to run forever </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.13 Design a Turing machine with no more than three states that accepts the language a(a+b)*. Assume ∑ = {a,b}</h2>
+            <p class="answer">TM M=(Q, ∑, Г, δ, q0, B,{q2}) <br>
+              Q – {q0,q1,q2} <br>
+              ∑ - {a,b}<br>
+              Г – {a,b,B}<br>
+              q0 – Initial state<br>
+              q2 - Final state<br>
+              δ - Transition function given as follows<br>
+              δ(q0,a) = (q1,a,R)<br>
+              δ(q1,a) = (q1,a,R)<br>
+              δ(q1,b) = (q1,b,R)<br>
+              δ(q1,B) = (q2,B,R)
+              </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.14 What is Turing machine?</h2>
+            <p class="answer">TM is denoted by
+              M=(Q, ∑, Г, δ, q0, B,F) where<br>
+              Q – A finite non empty set of states<br>
+              ∑ - A finite set of input symbols<br>
+              Г – A finite non empty set of tape symbols<br>
+              δ - The transition function is given by <br>
+                δ:Q X Г -> Q X Г X {L,R,S}<br>
+                q0 – Initial state<br>
+              B ε Г – Blank Symbols<br>
+                F - Final state
+              </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.15 What are the required fields of an instantaneous description of a Turing machine? </h2>
+            <p class="answer">It requires i)the state of the TM. <br>ii)the contents of the tape.<br> iii)the position of the tape head on the tape. </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.16 List the primary objectives of Turing Machine.</h2>
+            <p class="answer">It acts as a Computing Function. <br>
+              It will accept Recursive Language <br>
+              It has infinite amount of memory to store the input
+              </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.17 List out different types of TMs. </h2>
+            <p class="answer"> Multi tape Turing machine, off-line Turing Machine , Multi track Turing machine & Universal TM . </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.18 Is Halting problem decidable or undecidable problem </h2>
+            <p class="answer">The machine starting at given configuration will halt after finite number of steps or will never reach to a halt state. For a given configuration and input tape we can't determine whether the machine will ever halt. This problem is called halting problem. The halting problem is unsolvable. Hence it is undecidable problem. </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.19 List out the different techniques for turing machine construction.</h2>
+            <p class="answer">(i)Storage in the Finite Control <br>
+              (ii)Multiple tracks <br>
+              (iii)Checking off symbols<br>
+              (iv)Subroutines
+              </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.20 Compare FM, PDA and TM </h2>
+            <p class="answer"> Finite Machine is of two types - DFA and NFA. Both DFA and NFA accept regular language only <br>
+              PDA has a memory and hence it accepts large class of language. <br>
+              TM can be programmed. Hence TM accepts very large class of language. TM is therfore most powerful computational mode 
+           </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.21 Is it possible that a turing machine could be considered as a computer of functions from integers to integers? If yes justify    </h2>
+            <p class="answer">        Yes, TMs simulate computer of functions from integers to integers. That means it is a device for computing integer valued functions. In this scheme integers were presented in unary as blocks of a single character and machine computed by changing the lengths of blocks or by constructing new blocks on the input tape </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.22 What does Multitape turing machine contain? </h2>
+            <p class="answer">1. The input, a finite sequence of input symbols, is placed on the first tape. <br>
+              2. All other cells of all the tapes hold the blank. <br>
+              3. The final control is in initial state. <br>
+              4. The head of the first tape is at the left end of input. <br>
+              5. All other tape heads are at some arbitrary cell. 
+              </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.23 Define Subroutines in Turing machine </h2>
+            <p class="answer">A Turing machine subroutine is a set of states that performs some useful process. This set of states includes a start state and another state that temporarily has no moves, and that serves at the return state to pass control to whatever other set of states called the subroutine </p>
+          </div>
+          
+          
+         <!--  <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.1 </h2>
+            <p class="answer"> 1) Pro</p>
+          </div>-->
+          
+        </section>
+      </main>
+      <script src="./sources/questions.js">
+          
+      </script>
+  </body>
+  </html>

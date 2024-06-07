@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 2: Regular Expressions and Languages - Questions</title>
+    <link rel="stylesheet" href="./sources/questions.css">
+    <link rel="stylesheet" href="./sources/common.css">
+
+</head>
+<body>
+    <header>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <h1 id="unit-name">Unit 2: Regular Expressions and Languages</h1>
+        <div class="search-icon" onclick="toggleSearch()">&#128269;</div>
+    </header>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <h2 class="content">Contents<span class="home-icon">&#8962;</span></h2>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 1: Automata and Regular Expressions')">
+                <h3>Unit 1: Automata and Regular Expressions</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 2: Regular Expressions and Languages')">
+                <h3>Unit 2: Regular Expressions and Languages</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 3: Context-Free Grammar and Pushdown Automata')">
+                <h3>Unit 3: Context-Free Grammar and Pushdown Automata</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 4: Normal Forms and Turing Machines')">
+                <h3>Unit 4: Normal Forms and Turing Machines</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 5: Undecidability')">
+                <h3>Unit 5: Undecidability</h3>
+            </div>
+        </div>
+    </aside>
+    <div class="search-bar" id="search-bar">
+        <input type="text" id="search-input" placeholder="Search questions...">
+        <button onclick="searchQuestions()">Search</button>
+    </div>
+    <main>
+        <section class="questions-container">
+            <div class="question" onclick="toggleAnswer(this)">
+                <h2>Q.1 List any four ways of theorem proving.</h2>
+                <p class="answer">No, any language accepted by DFA, NFA, ε-NFA is called a regular language. For any finite automaton we can construct an equivalent regular expression and the language represented by regular expressions is a regular language.</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+              <h2>Q.2 Describe the following by regular expression <br>
+
+                a) L1 = The set of all strings of 0's and 1's ending in 00.<br>
+                
+                b) L2 The set of all strings of 0's and 1's beginning with 0 and ending with 1.</h2>
+              <p class="answer">a) The set of all strings of 0's and 1's is given by (0 + 1)*.<br>
+
+                Hence r.e. for L1 = (0+1)* 00.<br>
+                
+                b) The set of all strings beginning with 0 can be 0 (0+1)*.<br>
+                
+                Hence r.e. for L2 = 0 (0+1)* 1.</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+              <h2>Q.3 Show that (r*)* = r* for a regular expression r.</h2>
+              <p class="answer">Consider,<br>
+
+                r = 0     where Σ = {0}<br>
+                
+                Now   L.H.S. = (r*)*<br>
+                
+                = ((0)*)*<br>
+                
+                = {ε, 0, 00, 000, ...}  …(1)<br>
+                
+                Thus the set contains string of O's including null string.<br>
+                
+                Now R.H.S. = r*<br>
+                
+                = (0)*<br>
+                
+                = {ε, 0, 00, ... } …(2)<br>
+                
+                From equation (1) and (2) it is proved that<br>
+                
+                L.H.S. = R.H.S.<br>
+                
+                Hence,   (r*)* = r</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+              <h2>Q.4 State pumping lemma and its advantages.</h2>
+              <p class="answer">Pumping lemma: Let L be a regular set. Then there exists a constant n such that if z is any word in L such that |z| ≥ n then we can write z = uvw such that |uv|&lt;n and |v| ≥ 1 for all i ≥ 0 and uv<sup>i</sup>w is in L. The n indicates number of states in FA and should not be greater than the number of states. <br>
+
+
+                The advantage of pumping lemma is that this theorem is used to check whether given language is regular or not.</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+              <h2>Q.5 Show that the complement of a regular language is also regular</h2>
+              <p class="answer"> If L is a regular language, then its complement denoted by L' is also regular. To prove this, consider that language L is accepted by finite automaton M. Now all the words accepted by language L will reach to final state of machine M. If we change all the states of M to non-final states and all the non-final states of M to final state we get a new FA which is denoted by M'. Now this M' will accept all the words not belonging to L and reject all the words belonging to L. That means M' will accept the language L'. Thus there exists FA which accepts L'. Hence L' which is complement of L is also regular.</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+              <h2>Q.6 What is [10,11]* ? (Write atleast first seven terms).</h2>
+              <p class="answer">The {10+ 11}* is a set containing the strings of any combination of 10 and 11. This set also contains & or null string.<br>
+
+                The items of this set are<br>
+                
+                {ε, 10, 11, 1010, 1011, 1111, 1110, 111111, 101010, ...}</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+              <h2>Q.7 Is the set of strings over the alphabet {0} of the form 0n where n is not a prime is regular ? Prove or disprove.</h2>
+              <p class="answer">Let us assume that L is a regular language n is not a prime number. <br>
+
+                Let zϵL, L = 0n <br>
+                
+                |z| = uvw,     here i = 1. <br>
+                
+                Now consider L = uv<sup>i</sup>w     where i = 2 <br>
+                
+                = u v. vw <br>
+                
+                That means adding 1 to n, we get <br>
+                
+                n &lt; |uvvw| <br>
+                
+                n &lt; n+1 <br>
+                
+                But (n + 1) can be a prime number. Hence our assumption becomes contradictory to it. This shows that L is not regular language.</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+              <h2>Q.8 Construct regular expression for the language over the set ẑ = {a,b} in which total number of a's are divisible by 3.</h2>
+              <p class="answer">r.e. = (b* ab* ab* a)*</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+              <h2>Q.9 Find out the language generated by the regular expression (0+1)*. </h2>
+              <p class="answer"> L = {ε, 0, 1, 00, 11, 01, 10,111, ....} <br>
+
+                L = {Any number of 0's and 1's including nullstring}</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+              <h2>Q.10 What is the closure property of regular sets?</h2>
+              <p class="answer">If certain languages are regular and language L is formed by them by certain operations such as (union, concatenation and so on) and if we find L as regular, then this property is called closure property of regular sets.</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+              <h2>Q.11 Mention the applications of pumping lemma.</h2>
+              <p class="answer">1. Pumping lemma is used for deciding whether or not the given language is regular.  <br>
+
+                2. It is also useful for determing whether L is accepted by a regular expression or not. <br>
+                
+                Example 1: <br>
+                
+                L = {0n1n} is not regular. <br>
+                
+                L = {0P|p-is a prime number} <br>
+                
+                Example 2: <br>
+                
+                All these languages are non-regular languages and this can be proved by pumping lemma.</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+              <h2>Q.12 Is it true that the language accepted by NFA is different from regular language? Justify your answer.</h2>
+              <p class="answer">The language accepted by NFA is always regular. Because any NFA is equivalent to DFA. And if we represent certain language by NFA then we can definitely represent it using DFA. The regular language is a kind of language which can be represented by DFA. Hence the language accepted by NFA is not different from regular language.</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+              <h2>Q.13 Give regular expression to describe an identifier and positive integer.</h2>
+              <p class="answer">id = (a - zA - Z) (a - zA - Z 0-9)* <br>
+
+                P = (0-9)<sup>+</sup></p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+              <h2>Q.14 Find the string of minimum length in {0,1}* NOT in the language corresponding to the given regular expressions. <br>
+
+                a) 0* (100*) * 1*            b) (1+01) (0 +01) *</h2>
+              <p class="answer">a) {110} € 0* (100*)* 1*. <br>
+
+                b) ϕ.</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+              <h2>Q.15 Write a regular expression which generates strings with at least one 0 and one 1.</h2>
+              <p class="answer">r.e. = = (0<sup>+</sup> 1*) (1<sup>+</sup> 0*) (0+1)*</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+              <h2>Q.16 Give the operations that satisfy closure properties of regular languages.</h2>
+              <p class="answer">The operations are union, intersection, complement, difference, reversal, concatenation, reversal, homomorphism, inverse homomorphism.</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+              <h2>Q.17 Give a regular expression for the set of all strings having odd number of 1's.</h2>
+              <p class="answer"> r.e. = 1(0+11)*</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+              <h2>Q.18 State the precedence of regular expression operators.</h2>
+              <p class="answer">1. The star operator is having highest precedence. <br>
+
+                2. The dot operator (concatenation) has the next highest position,<br>
+                
+                3. Final precedence is given to + i.e. union operation. The union is an associative operator.</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+              <h2>Q.19 What does regular expression (a/b) * denote ?</h2>
+              <p class="answer">The strings generated by the given expression are {ε, a, b, aa, bb, ab, ba, ....} This denotes the language L = {Any number of a's and/or b's including null string}.</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+              <h2>Q.20 Give the regular expression for set of all strings ending in 00.</h2>
+              <p class="answer">r.e. = = (0+1)* 00</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+              <h2>Q.21 Differentiate regular expression and regular language.</h2>
+              <p class="answer">Regular expression over Σ can be defined by the operations such as r+s, rs and r* where r* and s both are regular expressions. The regular languages over Σ is defined as - <br>
+
+                1. An empty set ϕ.<br>
+                
+                3. L1 U L2 are regular languages.<br>
+                
+                2. L1 L2 are regular languages.<br>
+                
+                4. L1* is regular language.<br>
+                
+                The regular language is elaboration of regular expression. The regular expression denotes the tiny logical unit. It is typically used to represent pattern.</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+              <h2>Q.22 Name any four closure properties of regular languages.</h2>
+              <p class="answer">1. The union of two regular languages is regular.<br>
+
+                2. The intersection of two regular languages is regular.<br>
+                
+                3. The complement of regular language is regular.<br>
+                
+                4. The closure operation on a regular languages is regular.</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+              <h2>Q.23 What is meant by equivalent states in DFA ?</h2>
+              <p class="answer">The two states are said to be equivalent if there are same inputs coming to the state and same output going out from the states.</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+              <h2>Q.24 State the pumping lemma for regular languages.</h2>
+              <p class="answer"> Let, L be regular set. Then there is a constant n such that if z is any word in L and |z| ≥ n, we can write z = uvw such that |uv| ≤ n, |v| ≥ 1 for all i ≥ 0, then uviw is in L.</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+              <h2>Q.25 What are closure properties of regular languages.</h2>
+              <p class="answer"> Following are closure properties of regular languages:<br>
+
+                1) The union of two regular languages is regular.<br>
+                
+                2) The intersection of two regular languages is regular.<br>
+                
+                3) The complement of a regular language is regular.<br>
+                
+                4) The difference of two regular languages is regular.</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+              <h2>Q.26 Show whether a language L = {0<sup>n</sup> 1<sup>2n</sup>|n> 0} is regular or not using pumping lemma.</h2>
+              <p class="answer"> We will map W = xyz for given string W ϵ L = {0<sup>n</sup> 1<sup>2n</sup>} <br>
+
+                Suppose W = 001111<br>
+                
+                If we map W = xyz then -<br>
+                
+                W = 0 011 11<br>
+                
+                x = 0, y = 011 z = 11 ...(1)<br>
+                
+                By pumping lemma if W = xy<sup>i</sup> z ϵ L then the language is regular.<br>
+                
+                For equation (1) we have W = xy<sup>i</sup>z. We assume i = 2 then string becomes<br>
+                
+                W = xyyz<br>
+                
+                = 001101111<br>
+                
+                W = 0<sup>2</sup>1<sup>2</sup> 0<sup>1</sup>1<sup>4</sup> € L<br>
+                
+                This shows that given language is not regular.</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+              <h2>Q.27 Give language of regular expression a ? (b|c)*.</h2>
+              <p class="answer">The ? denotes preceding character occurs for one or zero times. The * means the string occurs for any number of times. The language contains a string which may begin with single a or no a and followed by any number of b's and c's.</p>
+            </div>
+            <div class="question" onclick="toggleAnswer(this)">
+              <h2>Q.28 Write regular expression for the set of all strings of 0's and 1's not containing 101 as substring.</h2>
+              <p class="answer">r.e. = 0*(1*000*)*1*0*
+
+                In above expression all 1's are followed by 00. This pattern is repeated for any number of times.</p>
+            </div>
+           
+
+<!--  <div class="question" onclick="toggleAnswer(this)">
+            <h2></h2>
+            <p class="answer"></p>
+          </div>-->
+          
+        </section>
+      </main>
+      <script src="./sources/questions.js">
+          </script>
+  </body>
+  </html>
+  

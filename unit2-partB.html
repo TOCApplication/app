@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 2: Regular Expressions and Languages - Questions</title>
+    <link rel="stylesheet" href="./sources/questions.css">
+    <link rel="stylesheet" href="./sources/common.css">
+
+</head>
+<body>
+    <header>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <h1 id="unit-name">Unit 2: Regular Expressions and Languages</h1>
+        <div class="search-icon" onclick="toggleSearch()">&#128269;</div>
+    </header>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <h2 class="content">Contents<span class="home-icon">&#8962;</span></h2>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 1: Automata and Regular Expressions')">
+                <h3>Unit 1: Automata and Regular Expressions</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 2: Regular Expressions and Languages')">
+                <h3>Unit 2: Regular Expressions and Languages</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 3: Context-Free Grammar and Pushdown Automata')">
+                <h3>Unit 3: Context-Free Grammar and Pushdown Automata</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 4: Normal Forms and Turing Machines')">
+                <h3>Unit 4: Normal Forms and Turing Machines</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 5: Undecidability')">
+                <h3>Unit 5: Undecidability</h3>
+            </div>
+        </div>
+    </aside>
+    <div class="search-bar" id="search-bar">
+        <input type="text" id="search-input" placeholder="Search questions...">
+        <button onclick="searchQuestions()">Search</button>
+    </div>
+    <main>
+        <section class="questions-container">
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Convert the given NFA with &epsilon; to NFA without &epsilon; <img src="./sources/u2 pb q1 i1.png" alt=""></h2>
+            <p class="answer"><img src="./sources/u2 pb q1.png" alt=""><img src="./sources/u2 pb q1 i2.png" alt=""><img src="./sources/u2 pb q1 i3.png" alt=""><img src="./sources/u2 pb q1 i4.png" alt=""></p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Theorem 1: If L1 and L2 are two languages then L1 U L2 is regular.
+
+            </h2>
+            <p class="answer"><img src="./sources/u2 pb q2.png" alt=""></p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Theorem 2: The complement of regular language is regular.</h2>
+            <p class="answer"><img src="./sources/u2 pb q3.png" alt=""></p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Theorem 3: If L1 and L2 are two regular languages then L1∩ L2 is regular.</h2>
+            <p class="answer"><img src="./sources/u2 pb q4.png" alt=""></p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Theorem 4: If L1 and L2 are two regular languages then L1 - L2 is regular</h2>
+            <p class="answer"><img src="./sources/u2 pb q5.png" alt=""></p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Theorem 5: The reversal of a regular languages is regular.</h2>
+            <p class="answer"><img src="./sources/u2 pb q6.png" alt=""><img src="./sources/u2 pb q6 i2.png" alt=""></p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Theorem 6: The closure operation on a regular language is regular.</h2>
+            <p class="answer"><img src="./sources/u2 pb q7.png" alt=""></p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Theorem 7: If L<sub>1</sub> and L<sub>2</sub> are two languages then L<sub>1</sub> L<sub>2</sub> is regular. In other words regular languages are closed under concatenation.</h2>
+            <p class="answer"><img src="./sources/u2 pb q8.png" alt=""></p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Theorem 8: A homomorphism of regular languages is regular.</h2>
+            <p class="answer"><img src="./sources/u2 pb q9.png" alt=""><img src="./sources/u2 pb q9 i2.png" alt=""></p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Theorem 9: The inverse homomorphism of regular language is regular.</h2>
+            <p class="answer"><img src="./sources/u2 pb q10.png" alt=""></p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Theorem : Let r be a regular expression, then there exists a NFA with ε transitions that accepts L (r).</h2>
+            <p class="answer"><img src="./sources/u2 pb q11.png" alt=""><img src="./sources/u2 pb q11 i2.png" alt=""><img src="./sources/u2 pb q11 i3.png" alt=""></p>
+          </div>
+        
+
+
+
+            <!--  <div class="question" onclick="toggleAnswer(this)">
+            <h2></h2>
+            <p class="answer"></p>
+          </div>-->
+          
+        </section>
+      </main>
+      <script src="./sources/questions.js">
+          </script>
+  </body>
+  </html>
+  

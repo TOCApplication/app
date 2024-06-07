@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Questions</title>
+    <link rel="stylesheet" href="./sources/university-questions.css">
+    <link rel="stylesheet" href="./sources/common.css">
+    
+</head>
+<body>
+    <header>
+        <h1>University Questions</h1>
+    </header>
+    <main>
+        <div class="button-container">
+            <button onclick="showImages('apr-may-2023')">Apr-May 2023</button>
+            <button onclick="showImages('nov-dec-2023')">Nov-Dec 2023</button>
+        </div>
+        <div id="image-container" class="image-container">
+            <!-- Images will be dynamically inserted here -->
+        </div>
+    </main>
+    <script>
+      function showImages(period) {
+    const imageContainer = document.getElementById('image-container');
+    imageContainer.innerHTML = ''; // Clear previous images
+
+    const images = {
+        'apr-may-2023': [
+            './sources/uq am i1.png',
+            './sources/uq am i2.png',
+            './sources/uq am i3.png'
+        ],
+        'nov-dec-2023': [
+            './sources/uq nd i1.png',
+            './sources/uq nd i2.png',
+            './sources/uq nd i3.png'
+        ]
+    };
+
+    images[period].forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = period;
+        imageContainer.appendChild(img);
+    });
+}
+
+    </script>
+</body>
+</html>

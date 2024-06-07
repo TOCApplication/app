@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 5: Undecidability - Questions</title>
+    <link rel="stylesheet" href="./sources/questions.css">
+    <link rel="stylesheet" href="./sources/common.css">
+
+</head>
+<body>
+    <header>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <h1 id="unit-name">Unit 5: Undecidability</h1>
+        <div class="search-icon" onclick="toggleSearch()">&#128269;</div>
+    </header>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <h2 class="content">Contents<span class="home-icon">&#8962;</span></h2>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 1: Automata and Regular Expressions')">
+                <h3>Unit 1: Automata and Regular Expressions</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 2: Regular Expressions and Languages')">
+                <h3>Unit 2: Regular Expressions and Languages</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 3: Context-Free Grammar and Pushdown Automata')">
+                <h3>Unit 3: Context-Free Grammar and Pushdown Automata</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 4: Normal Forms and Turing Machines')">
+                <h3>Unit 4: Normal Forms and Turing Machines</h3>
+            </div>
+            <div class="unit" onclick="navigateToUnit('selection.html', 'Unit 5: Undecidability')">
+                <h3>Unit 5: Undecidability</h3>
+            </div>
+        </div>
+    </aside>
+    <div class="search-bar" id="search-bar">
+        <input type="text" id="search-input" placeholder="Search questions...">
+        <button onclick="searchQuestions()">Search</button>
+    </div>
+    <main>
+        <section class="questions-container">
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.1 When we say a problem is decidable? Give an example of undecidable problem.</h2>
+            <p class="answer">problem whose language is recursive is said to be decidable. Otherwise the problem is undecidable . i.e there is no algorithm that takes as input an instance of the problem and determines whether the answer to that instance is yes or no.<br>
+              Eg. Halting problem 	
+             </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.2 What is recursively enumerable language? </h2>
+            <p class="answer">A language is recursively enumerable if there exists a Turing machine that accepts every string belonging to that language. And if the string does not belong to that language then it can cause the turing machine to enter ia an infinite loop </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.3 Mention the difference between P and NP problems</h2>
+            <p class="answer">P consists of all those languages or problems accepted by some TM that runs in some polynomial amount of time, as a function of its input length. <br>
+              NP is the class of languages or problems that are accepted by some nondeterministic TM‟s with a polynomial bound on time taken along any sequence of nondeterministic choices. 
+              </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.4 How to prove that the Post Correspondence problem is Undecidable. </h2>
+            <p class="answer">Introduce a modified PCP and reduce the same to the original PCP.
+              Again reduce L<sub>u</sub> to the modified PCP.
+              The chain of reduction infers if original L<sub>u</sub> is known to be undecidable then conclude that PCP is undecidable.
+              </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.5 Show that any PSPACE-hard language is also NP-hard.</h2>
+            <p class="answer">First we must show that the language is not in NP. This is trivial since NP is a subset of PSPACE and therefore, anything outside of PSPACE is also outside of NP.<br>
+              Then we must show that any problem in NP can be reduced to any PSPACE-hard language. Thus, any PSPACE-hard problem is also NP-hard.
+              </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.6 State Rice’s theorem.</h2>
+            <p class="answer">Every non-trivial property of the RE language is undecidable.<br>
+              A property is trivial if it is either empty such that it is satisfied by no language or is all RE languages, or else it is non-trivial.
+              </p>
+          </div>
+
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.7 Show that the collection of all Turing machines is countable.</h2>
+            <p class="answer">•	If for a set there is an enumerator, then the set is countable. <br>
+              •	Any Turing Machine can be encoded with a binary string of 0’s and 1’s. <br>
+              •	An enumeration procedure for the set of Turing Machine strings:<br>
+              Repeat
+              •	Generate the next binary string of 0’s and 1’s in proper order<br>
+              •	Check if the string describes a Turing Machine <br>
+              If Yes: Print string on output tape<br>
+              If No: Ignore string
+              </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.8 Mention the difference between decidable and undecidable problems</h2>
+            <p class="answer">•	Decidable Problem – Existence of an algorithm<br>
+              •	Undecidable Problem – No algorithm for solving it.
+              </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.9 What is universal turing machine</h2>
+            <p class="answer">Universal Turing machine (UTM) is a Turing machine that can simulate an arbitrary Turing machine on arbitrary input. The universal machine essentially achieves this by reading both the description of the machine to be simulated as well as the input thereof from its own tape</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.10 Features of Universal TM </h2>
+            <p class="answer">Universal TM can simulate any other turing machine. Universal TM is a single machine used to compute any computable sequence. 
+              Universal TM has an ability to manipulate an unbounded amount of data in finite amount of time 
+              </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.11 Give example for NP-complete problems.	</h2>
+            <p class="answer">Traveling Salesman Problem<br>
+              Graph Coloring Problem
+              </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.12 When a language is said to be recursive? </h2>
+            <p class="answer">A language is said to be recursive if there exists a turing machine that accepts every string of the language and every string is rejected if it is not belonging to that language. </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.13 Define modified posts correspondence problem</h2>
+            <p class="answer">Given lists A and B of k strings each from ∑* , say A = w1 ,w2, w3,…wk, B = x1 ,x2, x3,…xk does there exist a sequence of integers i1,i2,…ir such that w1, wi1,wi2,wi3,….wir=xi1,xi2,xi3,…xir .The sequence i1,i2,…ir is a solution to this instance of MPCP. </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.14 State two languages, which are not recursively enumerable </h2>
+            <p class="answer">•	Diagonalization language is not recursively enumerable. 
+              •	The partially decidable languages or undecidable languages are not recursively enumerable. 
+              </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.15 Define posts correspondence problem. </h2>
+            <p class="answer">An instance of posts correspondence problem consists of two lists A = w1 ,w2, w3,…wk , B = x1 ,x2, x3,…xk of strings over some alphabet ∑.This instance of PCP has a solution if there is any sequence of integers i1,i2,…im with m ≥1 such that w<sub>i1</sub>,w<sub>i2</sub>,w<sub>i3</sub>,….w<sub>im</sub>=x<sub>i1</sub>,x<sub>i2</sub>,x<sub>i3</sub>,…x<sub>im</sub>.The sequence i1,i2,…im is a solution to this instance of PCP. </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.16 Write the properties of Recursive Languages.</h2>
+            <p class="answer">A formal language is recursive if there exists a total Turing machine (a Turing machine that halts for every given input) that, when given a finite sequence of symbols as input, accepts it if it belongs to the language and rejects it otherwise. Recursive languages are also called decidable.</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.17 When do you say a problem is NP - hard?</h2>
+            <p class="answer">A problem is said to be NP - hard if an algorithm for solving it can be translated into a problem which is NP problem. Thus NP - hard is a algorithm for a problem which is atle</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.18 When a problem is said to be undecidable? </h2>
+            <p class="answer">If a problem is not a recursive language, then it is said to be undecidable problem</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.19 What is diagonalization language? </h2>
+            <p class="answer">The language Ld Which consists of all those strings w such that the Turing machine represented by w does not accept the input w. 
+              Ld = { wi | wi L(Mi)}
+              </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.20 Define Problem Solvable in Polynomial Time </h2>
+            <p class="answer">A Turing Machine M is said to be of time complexity T(n) if whenever m given an input w of length n, m halts after making at most T(n) moves, regardless of whether or not m accepts.</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.21 Show that union of recursive language is recursive </h2>
+            <p class="answer">L1 and L2 are recusive language. Then there exists a machine M1 that accepts L1 as well as machine M2 that accepts L2. We can simulate a machine M that accepts the language L such that L = L1 U L2. Then construct M which accepts if M1 accepts. If M1 does not accept then M2 simulates M. That means if M2 accepts then M accepts, if M2 rejects M also rejects. Thus M accepts the language L = L1 U L2 which is recursive.</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.22 Define NP-Completeness.</h2>
+            <p class="answer">A language is NP-complete if the following statements are true.(i)L is in NP (ii)For every language L‟ in NP there is a polynomial time reduction of L‟ to L.</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.23 What is the difference between PCP and MPCP?</h2>
+            <p class="answer">The difference between MPCP and PCP is that in the MPCP ,a solution is required to start with the first string on each list</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.24 What are the concepts used in UTMs?  </h2>
+            <p class="answer">Stored program computers.<br>•  Interpretive Implementation of Programming languages.<br>•  Computability</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.25 Define L .When is a trivial property? </h2>
+            <p class="answer">L is defined as the set { | L(M) is in . } is a trivial property if is empty or it consists of all r.e languages</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.26 When we say a problem is decidable? Give an example of undecidable problem? </h2>
+            <p class="answer">A problem whose language is recursive is said to be decidable. Otherwise the problem is said to be undecidable. Decidable problems have an algorithm that takes as input an instance of the problem and determines whether the answer to that instance is “yes” or “no”. (eg) of undecidable problems are (1)Halting problem of the TM.</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.27 Define the class NP Problem.</h2>
+            <p class="answer">A problem is said to be NP if 1. its solution comes from a finite set of possibilities, and 2. it takes polynomial time to verify the correctness of a candidate solution. Example - Scheduling problems.</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.28 What are tractable problems and intractable problems?</h2>
+            <p class="answer">Tractable Problem: a problem that is solvable by a polynomial-time algorithm. The upper bound is polynomial. Intractable Problem: a problem that cannot be solved by a polynomial-time algorithm. The lower bound is exponential.</p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.29 What are the properties of recursive and recursively enumerable languages?. </h2>
+            <p class="answer">(i)The complement of a recursive language is recursive,<br>(ii)The union of two recursive languages are recursive. <br>(iii)The union of two recursively enumerable languages are recursively enumerable.<br>(iv)If a language L and are both recursively enumerable then L is recursive. </p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.30 Difference between Finite Automata and Turing machine </h2>
+            <p class="answer"><img src="./sources/u5 pa q30.png" alt=""></p>
+          </div>
+          <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.31 Difference between Recursive and recursively enumerable languages</h2>
+            <p class="answer"><img src="./sources/u5 pa q31.png" alt=""></p>
+          <!--  <div class="question" onclick="toggleAnswer(this)">
+            <h2>Q.1 </h2>
+            <p class="answer"></p>
+          </div>-->
+          
+        </section>
+      </main>
+      <script src="./sources/questions.js">
+         
+      </script>
+  </body>
+  </html>
+  
