@@ -105,8 +105,5 @@ document.querySelector('.home-icon').addEventListener('click',()=>
   })
   
 
-  document.querySelector('.content').addEventListener('click',()=>
-    {
-      window.location.href = 'first-page.html';
-    })
+
     
