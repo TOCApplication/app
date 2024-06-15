@@ -45,10 +45,19 @@
         }
         .footer{
             position: fixed;
+            padding: 10px;
             bottom: 20px;
-            color: #46cd6a;
-            margin-right: 10px;
-            background-color:#000000;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 85%;
+            font-size: 1.1em;
+        }
+        .footer div{
+            margin-bottom: 10px;
+            text-align: center;
+
         }
         .college{
             text-align: center;margin-bottom: 20px;
@@ -62,13 +71,19 @@
             padding: 0;
             margin: 0;
         }
+        .color{
+            color: #d4af37;
+        }
+        .college-name{
+            line-height: 26px;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <h1>Contact Us</h1>
-        <div class="college"><div>Arunai Engineering College</div><br><p class="district">Tiruvannamalai, Tamil Nadu</p></div>
+        <div class="college"><div class="college-name">Arunai Engineering College</div><br><p class="district">Tiruvannamalai, Tamil Nadu</p></div>
         <div class="contact-info">
             
             <p><strong>Name:</strong> <span>Mrs.R.Kalaivanisri B.E, M.Tech., B.Ed., Assistant professor</span></p>
@@ -76,8 +91,13 @@
             
         </div>
     </div>
-    <div class="container footer">
-        <p>We extend our sincere gratitude to the Vice Chairman, Registrar, Principal, and Head of the Computer Science and Engineering Department.</p>
+    <div class="footer">
+        <div> <div class="persons">Er.E.V.Kumaran<br><span class="color">Vice Chariman</span></div>
+        <div class="persons">Dr.R.Sathiyaseelan<br><span class="color">Registrar</span></div></div>
+        <div> 
+        <div class="persons">Dr.R.Ravichandaran<br><span class="color">Principal</span></div>
+        <div class="persons">Mrs.V.Uma Devi<br><span class="color">HOD-CSE</span></div>
+    </div>  
     </div>
 </body>
 </html>
