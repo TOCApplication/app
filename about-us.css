@@ -42,6 +42,12 @@ h1{
   display: none; /* For Chrome, Safari, and Opera */
 }
 
+@media (max-width:386px) {
+  .credit p{
+    font-size: 0.9em;
+  }
+}
+
 .credit {
   display: flex;
   justify-content: space-between;
