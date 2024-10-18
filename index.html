@@ -47,11 +47,10 @@ const quoteAuthor = document.getElementById("quote-author");
 const newQuoteBtn = document.getElementById("new-quote-btn");
 
 function fetchRandomQuote() {
-    fetch('https://api.quotable.io/random')
+     fetch('https://programming-quotesapi.vercel.app/api/random')
         .then(response => response.json())
         .then(data => {
-            quoteText.textContent = data.content;
-            quoteAuthor.textContent = `- ${data.author}`;
+            quoteText.textContent = data.quote;
         })
         .catch(error => {
             quoteText.textContent = "Oops! Something went wrong.";
